@@ -1,0 +1,6 @@
+build/
+DerivedData/
+*.pbxuser
+xcuserdata/
+.DS_Store
+obj/
