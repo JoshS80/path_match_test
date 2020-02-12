@@ -18,9 +18,6 @@ void AddDirectoryPath(VEC_PAIR_PATHSTRING_PRODUCT& vecProductPaths, const CProdu
     // Locate an existing path entry.
     //
     auto iter = std::find_if(vecProductPaths.begin(), vecProductPaths.end(), [&sPath](const PAIR_PATHSTRING_PRODUCT& entry) {
-            //
-            // Should be case insensitive compare for Windows...
-            //
             return entry.first == sPath;
     });
     
@@ -124,6 +121,7 @@ int main(int argc, const char * argv[]) {
     AddDirectoryPath(vecProductPaths, CProduct{"AAAA", "Product 1", "1.00.0000"}, "C:\\Program Files");
     AddDirectoryPath(vecProductPaths, CProduct{"BBBB", "Another Product", "2.1.1"}, "C:\\RootFolder\\TestProduct");
     AddDirectoryPath(vecProductPaths, CProduct{"CCCC", "Test 3", "3.0.11"}, "C:\\Program Files\\My Company\\My Product\\");
+    AddDirectoryPath(vecProductPaths, CProduct{"CCCC", "Test 3", "3.0.11"}, "C:\\Program Files\\My Company\\");
     AddDirectoryPath(vecProductPaths, CProduct{"CCCC", "Test 3", "3.0.11"}, "C:\\Program Files\\My Company\\My Product\\test1.exe");
     AddDirectoryPath(vecProductPaths, CProduct{"DDDD", "Product 4", "4.0.0"}, "C:\\Program Files");
     
