@@ -26,6 +26,10 @@ void AddDirectoryPath(VEC_PAIR_PATHSTRING_PRODUCT& vecProductPaths, const CProdu
         // Sigh... going for c++11 here, otherwise:
         // auto [foundProduct, bMultipleProducts] = iter->second;
         auto foundProduct = std::get<0>(iter->second);
+        // Could also be:
+        //CProduct foundProduct;
+        //bool bMultipleProducts = false;
+        //std::tie(foundProduct, std::ignore) = iter->second;
         
         //
         // Don't add existing product
